@@ -1,3 +1,22 @@
 .city-card{
     padding-bottom: 1rem;
 }
+.w-main{
+    /* text-decoration: solid !important; */
+    font-size: 1.2rem !important;
+    background-color: rgb(229, 254, 245);
+    border-radius: 10px;
+    padding: 1rem;
+}
+.tech-data{
+    color: rgb(42, 19, 152);
+    font-size: 11px;
+}
+.w-info{
+    display: flex;
+}
+.w-sec-1{
+    text-align: left;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
