@@ -1,0 +1,26 @@
+
+.main-bg{
+     background: radial-gradient(closest-side, #250c37, #250955, #33115e, #0b062d);
+   background-size: 400% 400%;
+	animation: gradient 20s ease infinite;
+
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 25%;
+	}
+	35% {
+		background-position: 50% 25%;
+	}
+    75% {
+		background-position: 50% 0%;
+	}
+	100% {
+		background-position: 0% 25%;
+	}
+}

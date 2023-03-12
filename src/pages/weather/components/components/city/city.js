@@ -11,16 +11,25 @@ const City = (props) => {
     //useState([]) is an arrary. they will be not used for maps
     const [cityWeather, setCityWeather] = useState(null);
     const [value,setValue] = useState();
+    const [lastUpdated, setLastUpdated] = useState(null);
+    const [shouldFetch, setShouldFetch] = useState(true);
 
     // the city name came from the props will be used to find weather data
-    useEffect(() => {    
-        getWeatherData(props.name)
-        .then(data => 
-            setCityWeather(data)
-            // console.log(data)
-        )
-        .catch(error => console.error(error));
-        }, [] //so it'll only be updated if there is change to props.name
+    useEffect(() => {   
+        console.log("running the fetch"); 
+
+        
+        if (shouldFetch === true){
+            getWeatherData(props.name)
+            .then(data => 
+                setCityWeather(data)
+                // console.log(data)
+            )
+            .catch(error => console.error(error));
+        }
+
+        
+        }, [shouldFetch] //so it'll only be updated if there is change to props.name
         
     );
 
@@ -28,13 +37,38 @@ const City = (props) => {
     //worked properly or not by keeping an eye on to the cityWeather.
     useEffect(() => {
         console.log(cityWeather);
-        setValue("k");
+        const intervalId = setInterval(() => {
+                setCityWeather(null);   
+              setShouldFetch(true);
+              console.log("Should not fetch");
+              console.log("Should fetch")
+          }, 1/4 * 60 * 1000); // check every 5 mins
+           
+          return () => {
+            clearInterval(intervalId);
+          };
       }, [cityWeather]);
 
-    
     // waits until the state is updated
     if (!cityWeather) {
-    return <Spinner animation="grow" />;
+    return (
+        <Col sm={12} md={8} className='city-card'>
+        <Card>
+            <Card.Header as="h3">Loading Latest Data</Card.Header>
+            <Card.Body>
+                <Spinner animation="grow" />
+                </Card.Body>
+            </Card>
+        </Col>
+                
+        );
+    }
+
+    if (shouldFetch === true){
+        setTimeout(() => {
+            setShouldFetch(false);
+            console.log("Should not fetch");
+          }, 3000);
     }
 
     return(
