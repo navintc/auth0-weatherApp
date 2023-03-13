@@ -11,18 +11,7 @@ import { Col, Row, Spinner } from 'react-bootstrap';
 function App() {
 
   const [loginData, setLoginData] = useState(false);
-  // const { user } = useAuth0();
-
-  // useEffect(() => {   
-  //   if (loginData === false){
-  //     setLoginData(true);
-  //   }
-  //   }, [user] 
-    
-  // );
-    const { user, isAuthenticated, isLoading } = useAuth0();
-    console.log(isLoading);
-
+  const { user, isAuthenticated, isLoading } = useAuth0();
 
     //loading animation -has a bug
 
@@ -40,8 +29,6 @@ function App() {
       
     //   );
     // }
-    
-    console.log(user);
 
   return (
     <div className="App">
@@ -50,7 +37,6 @@ function App() {
       {isAuthenticated ? (
         <Weather/>) : (<Login/>) 
       }
-     
 
       <script src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" crossorigin></script>
       <script
@@ -62,11 +48,6 @@ function App() {
       <script>var Alert = ReactBootstrap.Alert;</script>
       
     </div>
-
-
-
-
-
   );
 }
 

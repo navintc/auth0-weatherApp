@@ -5,14 +5,13 @@ import {OPENWEATHER_API_KEY as API_KEY, API_URL} from '../CONSTS';
 export const getWeatherData = async (cname) => {
 
   try {
+    //making the request
     const response = await axios.get(API_URL, {
       params: {
         q: cname,
         appid: API_KEY
       }
     });
-
-    console.log('Axios request (getWeatherData):', response.config);
 
     return response.data;
 

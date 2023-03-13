@@ -18,18 +18,14 @@ const City = (props) => {
     useEffect(() => {   
         console.log("running the fetch"); 
 
-        
         if (shouldFetch === true){
             getWeatherData(props.name)
             .then(data => 
                 setCityWeather(data)
-                // console.log(data)
             )
             .catch(error => console.error(error));
         }
-
-        
-        }, [shouldFetch] //so it'll only be updated if there is change to props.name
+        }, [shouldFetch] //so it'll only be updated if there is change to shouldFetch
         
     );
 
@@ -38,10 +34,8 @@ const City = (props) => {
     useEffect(() => {
         console.log(cityWeather);
         const intervalId = setInterval(() => {
-                setCityWeather(null);   
-              setShouldFetch(true);
-              console.log("Should not fetch");
-              console.log("Should fetch")
+            setCityWeather(null);   
+            setShouldFetch(true);
           }, 5 * 60 * 1000); // check every 5 mins
            
           return () => {
