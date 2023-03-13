@@ -42,7 +42,7 @@ const City = (props) => {
               setShouldFetch(true);
               console.log("Should not fetch");
               console.log("Should fetch")
-          }, 1/4 * 60 * 1000); // check every 5 mins
+          }, 5 * 60 * 1000); // check every 5 mins
            
           return () => {
             clearInterval(intervalId);

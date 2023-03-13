@@ -7,7 +7,7 @@ const Cities = () => {
 
     return(
         <div>
-            <Container>
+            <Container className='cities'>
             {cityData.List.map (content =>(
                 <Row className="justify-content-md-center">
                     <City key={content.CityName} name={content.CityName}/>

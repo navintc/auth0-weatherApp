@@ -10,8 +10,8 @@ function Weather() {
 
     return(
         <div>
-        <div className='main-bg'></div>
-        <Cities/>
+            
+            <Cities/>
         </div>
 
     )

@@ -20,3 +20,8 @@
     margin-left: 2rem;
     margin-right: 2rem;
 }
+
+.card-header{
+    background: linear-gradient(153.07deg, #3EC6EB -2.47%, #1BC99F 102.78%);
+    border-bottom: 0px !important;
+}
