@@ -1,3 +1,4 @@
+import React from 'react';
 import './weather.css';
 
 import Cities from './components/cities';

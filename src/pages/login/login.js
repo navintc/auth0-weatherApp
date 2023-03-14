@@ -1,4 +1,5 @@
-import { Button, Card, Col, Container, Row } from "react-bootstrap"
+import React from 'react';
+import { Button, Col, Row } from "react-bootstrap"
 import "./login.css";
 import { useAuth0 } from "@auth0/auth0-react";
 

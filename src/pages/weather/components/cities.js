@@ -1,3 +1,4 @@
+import React from 'react';
 import './cities.css'
 import City from './components/city/city';
 import cityData from "../../../json/cities.json";
@@ -9,8 +10,8 @@ const Cities = () => {
         <div>
             <Container className='cities'>
             {cityData.List.map (content =>(
-                <Row className="justify-content-md-center">
-                    <City key={content.CityName} name={content.CityName}/>
+                <Row className="justify-content-md-center" key={content.CityName}>
+                    <City name={content.CityName}/>
                 </Row>
             ))
             }

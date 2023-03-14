@@ -1,19 +1,19 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import Weather from './pages/weather/weather';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/navbar/navbar';
-import { useEffect, useState } from 'react';
 import Login from './pages/login/login';
 import { useAuth0 } from "@auth0/auth0-react";
-import { Col, Row, Spinner } from 'react-bootstrap';
+
 
 function App() {
 
-  const [loginData, setLoginData] = useState(false);
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { isAuthenticated} = useAuth0();
 
     //loading animation -has a bug
+
+  // const { isAuthenticated, isLoading } = useAuth0();
 
     // if (isLoading) {
     //   return (
@@ -38,13 +38,13 @@ function App() {
         <Weather/>) : (<Login/>) 
       }
 
-      <script src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" crossorigin></script>
+      <script src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" crossOrigin></script>
       <script
         src="https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"
-        crossorigin></script>
+        crossOrigin></script>
       <script
         src="https://cdn.jsdelivr.net/npm/react-bootstrap@next/dist/react-bootstrap.min.js"
-        crossorigin></script>
+        crossOrigin></script>
       <script>var Alert = ReactBootstrap.Alert;</script>
       
     </div>

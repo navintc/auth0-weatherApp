@@ -1,19 +1,23 @@
+import React from 'react';
 import './city.css'
 import {useState, useEffect} from 'react';
 import { getWeatherData } from '../../../../../api/client';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import Spinner from 'react-bootstrap/Spinner';
+import PropTypes from 'prop-types';
 
 
 const City = (props) => {
      //useState({}) used to make objects which is used for .maps
     //useState([]) is an arrary. they will be not used for maps
     const [cityWeather, setCityWeather] = useState(null);
-    const [value,setValue] = useState();
-    const [lastUpdated, setLastUpdated] = useState(null);
     const [shouldFetch, setShouldFetch] = useState(true);
 
+    City.propTypes = {
+        // validate the 'name' prop
+        name: PropTypes.string.isRequired, 
+    };
 
     // the city name came from the props will be used to find weather data
     useEffect(() => {   
@@ -28,7 +32,7 @@ const City = (props) => {
             )
             .catch(error => console.error(error));
         }
-        }, [shouldFetch] //so it'll only be updated if there is change to shouldFetch
+        }, [shouldFetch, props.name] //so it'll only be updated if there is change to shouldFetch
         
     );
 
@@ -74,7 +78,7 @@ const City = (props) => {
                 <Card.Body>
                     
                     {cityWeather.weather.map(detail => (
-                        <h2 className="w-main">Expect {detail.main}</h2>
+                        <h2 key={detail.main} className="w-main">Expect {detail.main}</h2>
                     ))}
 
                     <div className='w-info'>
