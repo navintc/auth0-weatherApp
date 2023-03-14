@@ -88,11 +88,18 @@ const City = (props) => {
                                 <br></br>
                                 {/* rounding and converting kelvin to celcius */}
                                 Current Temperature is {Math.round(cityWeather.main.temp-273.15)} °C
+                                <br></br>
+                                <div className='idnum'>
+                                    ID: {cityWeather.id}
+                                </div>
+                                
                             </Card.Text>
                         </div>
 
                         <div className='w-sec-1 col'>
                             <Card.Text className="tech-data">
+                                WindSpeed: {cityWeather.wind.speed}
+                                <br></br>
                                 Longtitude: {cityWeather.coord.lon} | Latitude: {cityWeather.coord.lat}                            
                                 <br></br>
                                 TimeZone: {cityWeather.timezone}
