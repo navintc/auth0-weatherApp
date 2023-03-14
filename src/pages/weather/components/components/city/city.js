@@ -20,7 +20,7 @@ const City = (props) => {
 
     // the city name came from the props will be used to find weather data
     useEffect(() => {   
-        console.log("running the fetch"); 
+        // console.log("running the fetch"); 
 
         if (shouldFetch === true){
             getWeatherData(props.name)
@@ -38,7 +38,7 @@ const City = (props) => {
     //this is used to check whether the async function in the prev useEffect
     //worked properly or not by keeping an eye on to the cityWeather.
     useEffect(() => {
-        console.log(cityWeather);
+        // console.log(cityWeather);
         const intervalId = setInterval(() => {
             setCityWeather(null);   
             setShouldFetch(true);
@@ -66,7 +66,7 @@ const City = (props) => {
     if (shouldFetch === true){
         setTimeout(() => {
             setShouldFetch(false);
-            console.log("Should not fetch");
+            // console.log("Should not fetch");
           }, 3000);
     }
 
