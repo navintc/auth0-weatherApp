@@ -14,14 +14,17 @@ const City = (props) => {
     const [lastUpdated, setLastUpdated] = useState(null);
     const [shouldFetch, setShouldFetch] = useState(true);
 
+
     // the city name came from the props will be used to find weather data
     useEffect(() => {   
         console.log("running the fetch"); 
 
         if (shouldFetch === true){
             getWeatherData(props.name)
-            .then(data => 
-                setCityWeather(data)
+            .then(data =>{
+                setCityWeather(data);
+               
+            }
             )
             .catch(error => console.error(error));
         }
@@ -54,7 +57,6 @@ const City = (props) => {
                 </Card.Body>
             </Card>
         </Col>
-                
         );
     }
 
@@ -80,6 +82,7 @@ const City = (props) => {
                             <Card.Text>
                                 Country: {cityWeather.sys.country}
                                 <br></br>
+                                {/* rounding and converting kelvin to celcius */}
                                 Current Temperature is {Math.round(cityWeather.main.temp-273.15)} °C
                             </Card.Text>
                         </div>
@@ -98,9 +101,6 @@ const City = (props) => {
                 </Card.Body>
             </Card>
         </Col>
-
-                
-      
     )
 }
 export default City;
