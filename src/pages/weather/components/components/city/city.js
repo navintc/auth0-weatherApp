@@ -7,7 +7,6 @@ import Card from 'react-bootstrap/Card';
 import Spinner from 'react-bootstrap/Spinner';
 import PropTypes from 'prop-types';
 
-
 const City = (props) => {
      //useState({}) used to make objects which is used for .maps
     //useState([]) is an arrary. they will be not used for maps
@@ -82,9 +81,10 @@ const City = (props) => {
                     ))}
 
                     <div className='w-info'>
-                        <div className='w-sec-1 col'>
+                        <div className='w-sec-1 col min-dataset'>
                             <Card.Text>
                                 Country: {cityWeather.sys.country}
+                                <img src={`https://flagsapi.com/${cityWeather.sys.country}/flat/16.png`} className="flag-img"></img>
                                 <br></br>
                                 {/* rounding and converting kelvin to celcius */}
                                 Current Temperature is {Math.round(cityWeather.main.temp-273.15)} °C

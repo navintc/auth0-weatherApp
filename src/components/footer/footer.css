@@ -1,0 +1,13 @@
+.footer-box{
+    width: 100vw;
+    height: 5rem;
+    background-color: rgb(50, 50, 50);
+}
+.footer-txt{
+    color: white;
+    font-size: 10px;
+}
+
+.footer-margin{
+    margin-top: 2rem;
+}

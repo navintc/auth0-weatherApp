@@ -1,22 +1,14 @@
 import React from 'react';
 import './weather.css';
-
 import Cities from './components/cities';
-
-
 
 function Weather() {
 
-
-
     return(
-        <div>
-            
+        <div>  
             <Cities/>
         </div>
-
     )
-
 }
 
 export default Weather;

@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/navbar/navbar';
 import Login from './pages/login/login';
 import { useAuth0 } from "@auth0/auth0-react";
+import Footer from './components/footer/footer';
 
 
 function App() {
@@ -34,9 +35,12 @@ function App() {
     <div className="App">
       <div className="main-bg"></div>
       <Navbar/>
-      {isAuthenticated ? (
-        <Weather/>) : (<Login/>) 
+
+      {isAuthenticated ?
+        (<Weather/>) : (<Login/>) 
       }
+
+      <Footer/>
 
       <script src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" crossOrigin></script>
       <script

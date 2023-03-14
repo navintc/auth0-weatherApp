@@ -4,24 +4,40 @@
 .w-main{
     /* text-decoration: solid !important; */
     font-size: 1.2rem !important;
-    background-color: rgb(229, 254, 245);
+    background-color: rgb(34, 0, 50);
     border-radius: 10px;
     padding: 1rem;
+    color: white;
 }
 .tech-data{
-    color: rgb(42, 19, 152);
+    color: rgb(122, 95, 255);
     font-size: 11px;
 }
 .w-info{
     display: flex;
+}
+
+.min-dataset{
+    color: white;
 }
 .w-sec-1{
     text-align: left;
     margin-left: 2rem;
     margin-right: 2rem;
 }
-
+.card{
+    border: 0px !important;
+    border-radius: 5px !important;
+}
 .card-header{
     background: linear-gradient(153.07deg, #3EC6EB -2.47%, #1BC99F 102.78%);
     border-bottom: 0px !important;
+}
+
+.card-body{
+    background-color: rgb(42, 42, 42);
+}
+
+.flag-img{
+    margin-left: 0.5rem;
 }
